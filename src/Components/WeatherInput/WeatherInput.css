@@ -1,0 +1,38 @@
+.maininput {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .maininput h2 {
+    margin-bottom: 10px;
+  }
+  
+  .maininput input[type="text"],
+  .maininput button {
+    border-radius: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 80%;
+    max-width: 300px;
+  }
+  
+  .maininput input[type="text"] {
+    margin-bottom: 10px;
+  }
+  
+  .maininput button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .maininput input[type="text"],
+    .maininput button {
+      max-width: none;
+    }
+  }
+  
