@@ -4,6 +4,8 @@
 
 Weather Dashboard is a web application that provides current weather information and a 5-day forecast based on the user's input city. It utilizes the OpenWeatherMap API to fetch weather data.
 
+The live version of this project can be seen at kpweatherdashboard.vercel.app
+
 ## Features
 
 - **Current Weather:** View the current temperature, weather description, minimum and maximum temperature, humidity, and wind information for a specific city.
