@@ -9,7 +9,7 @@ body {
 
 .UpperSection {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   gap: 15rem;
   margin-top: 1rem;
   background-color: #aad9bb;
@@ -17,15 +17,19 @@ body {
   padding: 1rem;
 }
 
-@media (min-width: 768px) {
-  .UpperSection {
-    flex-direction: row; 
-    justify-content: center; 
-    align-items: flex-start;
-  }
-}
-
 .weatherforecast {
   margin-top: 1rem;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .UpperSection {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    background-color: #aad9bb;
+    border-radius: 10px;
+    padding: 1rem;
+    gap: 2rem;
+  }
 }
