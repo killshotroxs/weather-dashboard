@@ -4,9 +4,18 @@ import "./CurrentWeather.css"
 const CurrentWeather = ({ weatherData, isCelsius }) => {
   if (!weatherData) {
     return (
-      <div>
+      <div className='currentweather'>
         <h2>Current Weather</h2>
         <p>Please enter a city and click Search</p>
+      </div>
+    );
+  }
+
+  if (weatherData.cod === '404') {
+    return (
+      <div className='currentweather'>
+        <h2>Current Weather</h2>
+        <p>Please enter a correct city</p>
       </div>
     );
   }
@@ -14,14 +23,13 @@ const CurrentWeather = ({ weatherData, isCelsius }) => {
   const { name, main, wind, weather } = weatherData;
   const weatherDescription = weather[0].description;
   const iconCode = weather[0].icon;
-  const temperature = isCelsius ? main.temp : (main.temp * 9/5) + 32; // Convert temperature to Fahrenheit if isCelsius is false
-  const minTemperature = isCelsius ? main.temp_min : (main.temp_min * 9/5) + 32; // Convert temperature to Fahrenheit if isCelsius is false
-  const maxTemperature = isCelsius ? main.temp_max : (main.temp_max * 9/5) + 32; // Convert temperature to Fahrenheit if isCelsius is false
+  const temperature = isCelsius ? main.temp : (main.temp * 9/5) + 32; 
+  const minTemperature = isCelsius ? main.temp_min : (main.temp_min * 9/5) + 32; 
+  const maxTemperature = isCelsius ? main.temp_max : (main.temp_max * 9/5) + 32;
   const humidity = main.humidity;
   const windSpeed = wind.speed;
   const windDirection = wind.deg;
 
-  // Function to convert wind direction in degrees to cardinal direction
   const getWindDirection = (degree) => {
     const directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
     const index = Math.round((degree % 360) / 45);
