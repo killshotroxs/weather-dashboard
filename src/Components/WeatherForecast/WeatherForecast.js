@@ -47,7 +47,7 @@ const WeatherForecast = ({ city, isCelsius }) => {
           <div className="forecast-card" key={index}>
             <h3>{forecast.date.toLocaleDateString('en-GB')}</h3> 
             <img src={`http://openweathermap.org/img/wn/${forecast.weather[0].icon}.png`} alt="Weather Icon" />
-            <p>Temperature: {isCelsius ? forecast.main.temp : ((forecast.main.temp * 9/5) + 32).toFixed(2)} {isCelsius ? '°C' : '°F'}</p>
+            <p>{isCelsius ? forecast.main.temp : ((forecast.main.temp * 9/5) + 32).toFixed(2)} {isCelsius ? '°C' : '°F'}</p>
             <p>{forecast.weather[0].description}</p>
           </div>
         ))}
